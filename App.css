@@ -1,0 +1,22 @@
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px;
+  padding: 0 16px;
+  background-color: aqua;
+  height: 96px;
+  width: auto;
+}
+
+.leftBox{
+  display: flex;
+}
+
+.rightBox {
+  display: flex;
+}
+
+.navLinks {
+  padding: 16px;
+}
