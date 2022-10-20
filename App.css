@@ -4,8 +4,8 @@
   justify-content: space-between;
   margin: 0px;
   padding: 0 16px;
-  background-color: aqua;
-  height: 96px;
+  background-color: rgb(236, 214, 235);
+  height: 72px;
   width: auto;
 }
 
@@ -20,4 +20,9 @@
 .navLinks {
   padding: 16px;
   text-decoration: none;
+}
+
+.logo {
+  padding-top: 8px;
+  width: 160px;
 }

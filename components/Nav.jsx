@@ -1,10 +1,13 @@
 import React from 'react';
+import Logo from '../assets/Library.svg'
 
 const Nav = () => {
     return (
         <div className='container'>
             <div className="leftBox">
-                Logo
+                <a href="/">
+                    <img src={Logo} alt="" className="logo" />
+                </a>
             </div>
             <div className="rightBox">
                 <a className="navLinks" href="">Register</a>
