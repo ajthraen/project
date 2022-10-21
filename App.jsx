@@ -8,7 +8,13 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 function App() {
   function register() {
     console.log('register')
-    createUserWithEmailAndPassword(auth, 'email@gmail.com', 'password')
+    createUserWithEmailAndPassword(auth, 'l@gmail.com', 'password')
+    .then((user) => {
+      console.log(user)
+    })
+    .catch((error) => {
+      console.log(error)
+    })
   }
   return (
     <Router>
