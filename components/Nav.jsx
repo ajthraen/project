@@ -10,9 +10,9 @@ const Nav = () => {
                 </a>
             </div>
             <div className="rightBox">
-                <a className="navLinks" href="">Register</a>
+                <a className="navLinks" href="/">Register</a>
                 <a className="navLinks" href="">Login</a>
-                <a className="navLinks" href="">Home</a>
+                <a className="navLinks" href="/page">Home</a>
             </div>
         </div>
     );
