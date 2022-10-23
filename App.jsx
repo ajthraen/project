@@ -3,12 +3,21 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Nav from './components/Nav';
 import Page from './pages/Page';
 import { auth } from "./firebase/init"
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 function App() {
   function register() {
-    console.log('register')
-    createUserWithEmailAndPassword(auth, 'l@gmail.com', 'password')
+    createUserWithEmailAndPassword(auth, 'a@gmail.com', 'password123')
+    .then((user) => {
+      console.log(user)
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+  }
+  function login() {
+    console.log('login')
+    signInWithEmailAndPassword(auth, 'a@gmail.com', 'password123' )
     .then((user) => {
       console.log(user)
     })
@@ -21,6 +30,7 @@ function App() {
       <div>
         <Nav/>
         <button onClick={register}>Register</button>
+        <button onClick={login}>Login</button>
         <Route path="/page" exact render={() => <Page/>}/>
       </div>
     </Router>  
