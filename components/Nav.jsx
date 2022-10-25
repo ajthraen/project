@@ -46,6 +46,7 @@ const Nav = () => {
       signOut(auth);
       setUser({});
     }
+
     return (
         <div className='container'>
             <div className="leftBox">
@@ -57,7 +58,7 @@ const Nav = () => {
                 <button className='navLinks' onClick={register}>Register</button>
                 <button className='navLinks' onClick={login}>Login</button>
                 <button className='navLinks' onClick={logout}>Logout</button>
-                <div className='userBubble'>{loading ? 'loading...' : user.email[0].toUpperCase()}</div>
+                <button className='userBubble'>{loading ? 'loading...' : user.email[0].toUpperCase()}</button>
             </div>
         </div>
     );
