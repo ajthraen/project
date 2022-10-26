@@ -52,7 +52,7 @@ const Nav = () => {
     return (
         <div className='container'>
             <div className="leftBox">
-                <a href="/">
+                <a href="/page">
                     <img src={Logo} alt="" className="logo" />
                 </a>
             </div>
