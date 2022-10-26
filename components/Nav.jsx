@@ -14,10 +14,11 @@ const Nav = () => {
   
     React.useEffect(() => {
       onAuthStateChanged(auth, (user) => {
-        setLoading(false);
-        console.log(user)
-        if (user) {
-          setUser(user)
+          console.log(user)
+          if (user) {
+              setLoading(false);
+              setUser(user)
+              console.log('if')
         }
       })
     }, []);
@@ -42,9 +43,10 @@ const Nav = () => {
       })
     }
     function logout() {
-      console.log('logout');
-      signOut(auth);
-      setUser({});
+        signOut(auth);
+        setLoading(true);
+        console.log('logout');
+        setUser({});
     }
 
     return (
@@ -58,7 +60,7 @@ const Nav = () => {
                 <button className='navLinks' onClick={register}>Register</button>
                 <button className='navLinks' onClick={login}>Login</button>
                 <button className='navLinks' onClick={logout}>Logout</button>
-                <button className='userBubble'>{loading ? 'loading...' : user.email[0].toUpperCase()}</button>
+                <button className='userBubble'>{loading ? '.' : user.email[0].toUpperCase()}</button>
             </div>
         </div>
     );
