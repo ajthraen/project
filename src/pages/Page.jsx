@@ -1,6 +1,6 @@
 import React from 'react';
 import { auth, db } from "../firebase/init"
-import { collection, addDoc, getDocs } from 'firebase/firestore';
+import { collection, addDoc, getDocs, getDoc, doc } from 'firebase/firestore';
 import { 
     createUserWithEmailAndPassword, 
     signInWithEmailAndPassword,
@@ -22,8 +22,16 @@ const Page = () => {
 
     async function getAllPosts() {
         const {docs} = await getDocs(collection(db, "posts"));
-        const posts = docs.map(elem => elem.data());
+        const posts = docs.map(elem =>({ ...elem.data(), id: elem.id}));
         console.log(posts)
+    }
+
+    async function getPostById() {
+        const hardCodedId = "pe6a8vHuLMFnFJAajtNp"
+        const postRef = doc(db, "posts", hardCodedId);
+        const postSnap = await getDoc(postRef)
+        const post = postSnap.data();
+        console.log(post);
     }
   
     React.useEffect(() => {
@@ -73,6 +81,9 @@ const Page = () => {
                 </div>
                 <div>
                     <button onClick={getAllPosts}>Get All Posts</button>
+                </div>
+                <div>
+                    <button onClick={getPostById}>Get Specific Post</button>
                 </div>
         </div>
     );
