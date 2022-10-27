@@ -22,7 +22,8 @@ const Page = () => {
 
     async function getAllPosts() {
         const {docs} = await getDocs(collection(db, "posts"));
-        console.log(docs)
+        const posts = docs.map(elem => elem.data());
+        console.log(posts)
     }
   
     React.useEffect(() => {
