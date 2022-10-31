@@ -6,22 +6,38 @@ export const Form = () => {
     const [lastName, setLastName] = useState("")
     const [age, setAge] = useState("")
 
-    function onSubmitHandler() {
-        console.log('Submit')
-    }
-
-    function inputChangeHandler() {
-        console.log('Change')
+    const onSubmitHandler = (event) => {
+        event.preventDefault();
+        alert(`The name you entered was: ${firstName}`)
+        console.log(firstName)
     }
 
     return (
     <form onSubmit={onSubmitHandler}>
         <div><label htmlFor="first_name">First Name</label></div>
-        <div><input id="first_name" onChange={(e)=>inputChangeHandler(setFirstName, e)} type="text"/></div>
+        <div>        
+            <input
+                type="text" 
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+            />
+        </div>
         <div><label htmlFor="last_name">Last Name</label></div>
-        <div><input id="last_name" onChange={(e)=>inputChangeHandler(setLastName, e)} type="text"/></div>
+        <div>
+            <input
+                type="text" 
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value)}
+            />
+        </div>
         <div><label htmlFor="age">Age</label></div>
-        <div><input id="age" onChange={(e)=>inputChangeHandler(setAge, e)} type="number"/></div>
+        <div>
+            <input
+                type="text" 
+                value={age}
+                onChange={(e) => setAge(e.target.value)}
+            />
+        </div>
         <input type="submit"/>
     </form>
     );

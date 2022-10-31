@@ -40,7 +40,6 @@ const Page = () => {
           if (user) {
               setLoading(false);
               setUser(user)
-              console.log('if')
         }
       })
     }, []);
