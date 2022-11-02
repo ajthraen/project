@@ -65,7 +65,7 @@ const Page = () => {
     }
     function login() {
       console.log('login')
-      signInWithEmailAndPassword(auth, 'a@gmail.com', 'password123' )
+      signInWithEmailAndPassword(auth, email, password)
       .then(({user}) => {
         console.log(user)
         setUser(user);

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Logo from '../assets/Library.svg'
 import { auth } from "../firebase/init"
 import { 
@@ -52,14 +53,26 @@ const Nav = () => {
     return (
         <div className='container'>
             <div className="leftBox">
-                <a href="/page">
+                <a href="/">
                     <img src={Logo} alt="" className="logo" />
                 </a>
             </div>
             <div className="rightBox">
-                <button className='navLinks' onClick={register}>Register</button>
+                {/* <button className='navLinks' onClick={register}>Register</button>
                 <button className='navLinks' onClick={login}>Login</button>
-                <button className='navLinks' onClick={logout}>Logout</button>
+                <button className='navLinks' onClick={logout}>Logout</button> */}
+                <ul className='navLinkBox'>
+                    <li>
+                        <Link to="/page" className="navLinks">
+                        Sign In
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/page" className="navLinks">
+                        Register
+                        </Link>
+                    </li>
+                </ul>
                 <button className='userBubble'>{loading ? '.' : user.email[0].toUpperCase()}</button>
             </div>
         </div>
