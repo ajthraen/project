@@ -4,13 +4,13 @@ import { useState } from 'react';
 export const Form = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const users = {}
+    const users = {email, password}
 
     const onSubmitHandler = (event) => {
         event.preventDefault();
         // alert(`The name you entered was: ${email}`)
         users[email, password] = {email, password}
-        console.log(users)
+        console.log(users.email)
     }
 
     return (

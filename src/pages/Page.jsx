@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import { auth, db } from "../firebase/init"
 import { collection, addDoc, getDocs, getDoc, doc } from 'firebase/firestore';
 import { 
@@ -11,6 +12,9 @@ import {
 const Page = () => {
     const [user, setUser] = React.useState({});
     const [loading, setLoading] = React.useState(true);
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const users = {email, password}
 
     function createPost() {
         const post = {
@@ -33,6 +37,13 @@ const Page = () => {
         const post = postSnap.data();
         console.log(post);
     }
+
+    const onSubmitHandler = (event) => {
+        event.preventDefault();
+        // alert(`The name you entered was: ${email}`)
+        users[email, password] = {email, password}
+        console.log(users.email)
+    }
   
     React.useEffect(() => {
       onAuthStateChanged(auth, (user) => {
@@ -44,7 +55,7 @@ const Page = () => {
       })
     }, []);
     function register() {
-      createUserWithEmailAndPassword(auth, 'a@gmail.com', 'password123')
+      createUserWithEmailAndPassword(auth, email, password)
       .then((user) => {
         console.log(user)
       })
@@ -54,7 +65,7 @@ const Page = () => {
     }
     function login() {
       console.log('login')
-      signInWithEmailAndPassword(auth, 'a@gmail.com', 'password123' )
+      signInWithEmailAndPassword(auth, email, password)
       .then(({user}) => {
         console.log(user)
         setUser(user);
@@ -72,18 +83,37 @@ const Page = () => {
 
     return (
         <div className='container1'>
-                <button className='navLinks1' onClick={register}>Register</button>
-                <button className='navLinks1' onClick={login}>Login</button>
-                <button className='navLinks1' onClick={logout}>Logout</button>
-                <div>
-                    <button onClick={createPost}>Create Post</button>
+            <form onSubmit={onSubmitHandler}>
+                <div><label htmlFor="first_name">Email</label></div>
+                <div>        
+                    <input
+                        type="text" 
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
                 </div>
+                <div><label htmlFor="last_name">Password</label></div>
                 <div>
-                    <button onClick={getAllPosts}>Get All Posts</button>
+                    <input
+                        type="text" 
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
                 </div>
-                <div>
-                    <button onClick={getPostById}>Get Specific Post</button>
-                </div>
+                <input type="submit"/>
+            </form>
+            <button className='navLinks1' onClick={register}>Register</button>
+            <button className='navLinks1' onClick={login}>Login</button>
+            <button className='navLinks1' onClick={logout}>Logout</button>
+            <div>
+                <button onClick={createPost}>Create Post</button>
+            </div>
+            <div>
+                <button onClick={getAllPosts}>Get All Posts</button>
+            </div>
+            <div>
+                <button onClick={getPostById}>Get Specific Post</button>
+            </div>
         </div>
     );
 }
