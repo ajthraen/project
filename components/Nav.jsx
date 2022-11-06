@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../assets/Library.svg'
 
-const Nav = () => {
+const Nav = (props) => {
+    const isLoggedIn = props.isLoggedIn
   
     return (
         <div className='container'>
@@ -12,18 +13,24 @@ const Nav = () => {
                 </a>
             </div>
             <div className="rightBox">
-                <ul className='navLinkBox'>
-                    <li>
+                    {isLoggedIn ?
                         <Link to="/page" className="navLinks">
-                        Sign In
+                           Sign Out
                         </Link>
-                    </li>
-                    <li>
-                        <Link to="/page" className="navLinks">
-                        Register
-                        </Link>
-                    </li>
-                </ul>
+                        :
+                        <ul className='navLinkBox'>
+                            <li>
+                                <Link to="/page" className="navLinks">
+                                Sign In
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/page" className="navLinks">
+                                Register
+                                </Link>
+                            </li>
+                        </ul>
+                    }
                 {/* <button className='userBubble'>{user.email[0].toUpperCase()}</button> */}
             </div>
         </div>
