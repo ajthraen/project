@@ -12,7 +12,6 @@ import {
     signOut,
     onAuthStateChanged
 } from "firebase/auth";
-import Landing from './pages/Landing';
 import UserPage from './pages/UserPage';
 import Home from './pages/Home'
 
@@ -76,7 +75,6 @@ function App() {
         <Route path="/userpage" exact render={() => <UserPage register={register} login={login} logout={logout} onSubmitHandler={onSubmitHandler} setEmail={setEmail} setPassword={setPassword} isLoggedIn={isLoggedIn}/>}/>
         <Route path="/page" exact render={() => <Page/>}/>
         <Route path="/form" exact render={() => <Form/>}/>
-        <Route path="/landing" exact render={() => <Landing/>}/>
       </div>
     </Router>  
   );
