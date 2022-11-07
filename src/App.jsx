@@ -12,14 +12,17 @@ import {
     signOut,
     onAuthStateChanged
 } from "firebase/auth";
+import Landing from './pages/Landing';
+import UserPage from './pages/UserPage';
+import Home from './pages/Home'
 
 function App() {
   const [user, setUser] = React.useState({});
   const [loading, setLoading] = React.useState(true);
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [isLoggedIn, setIsLoggedIn] = useState("")
   const users = {email, password}
-  let loggedIn = null;
 
   const onSubmitHandler = (event) => {
       event.preventDefault();
@@ -30,7 +33,6 @@ function App() {
 
   React.useEffect(() => {
     onAuthStateChanged(auth, (user) => {
-        console.log(user)
         if (user) {
             setLoading(false);
             setUser(user)
@@ -51,8 +53,8 @@ function App() {
     signInWithEmailAndPassword(auth, email, password)
     .then(({user}) => {
       setUser(user);
-      loggedIn = true;
-      console.log(user, loggedIn)
+      setIsLoggedIn(true);
+      console.log(user)
     })
     .catch((error) => {
       console.log(error)
@@ -61,41 +63,20 @@ function App() {
   function logout() {
       signOut(auth);
       setLoading(true);
+      setIsLoggedIn(false);
       setUser({});
-      loggedIn = false;
-      console.log('logout', loggedIn);
+      console.log('logout');
   }
 
   return (
     <Router>
       <div>
-        <Nav/>
-        <div className='container1'>
-            <form onSubmit={onSubmitHandler}>
-                <div><label htmlFor="first_name">Email</label></div>
-                <div>        
-                    <input
-                        type="text" 
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                </div>
-                <div><label htmlFor="last_name">Password</label></div>
-                <div>
-                    <input
-                        type="text" 
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                </div>
-                <input type="submit"/>
-            </form>
-            <button className='navLinks1' onClick={register}>Register</button>
-            <button className='navLinks1' onClick={login}>Login</button>
-            <button className='navLinks1' onClick={logout}>Logout</button>
-        </div>
+        <Nav isLoggedIn={isLoggedIn}/>
+        <Route path="/" exact component={Home} />
+        <Route path="/userpage" exact render={() => <UserPage register={register} login={login} logout={logout} onSubmitHandler={onSubmitHandler} setEmail={setEmail} setPassword={setPassword} isLoggedIn={isLoggedIn}/>}/>
         <Route path="/page" exact render={() => <Page/>}/>
         <Route path="/form" exact render={() => <Form/>}/>
+        <Route path="/landing" exact render={() => <Landing/>}/>
       </div>
     </Router>  
   );
