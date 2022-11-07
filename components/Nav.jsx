@@ -20,12 +20,12 @@ const Nav = (props) => {
                         :
                         <ul className='navLinkBox'>
                             <li>
-                                <Link to="/page" className="navLinks">
+                                <Link to="/userpage" className="navLinks">
                                 Sign In
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/page" className="navLinks">
+                                <Link to="/userpage" className="navLinks">
                                 Register
                                 </Link>
                             </li>
