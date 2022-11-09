@@ -6,7 +6,7 @@ const Nav = (props) => {
     const isLoggedIn = props.isLoggedIn
   
     return (
-        <div className='container'>
+        <div className='container2'>
             <div className="leftBox">
                 <a href="/">
                     <img src={Logo} alt="" className="logo" />
@@ -14,7 +14,7 @@ const Nav = (props) => {
             </div>
             <div className="rightBox">
                     {isLoggedIn ?
-                        <Link to="/page" className="navLinks">
+                        <Link to="/userpage" className="navLinks">
                            Sign Out
                         </Link>
                         :

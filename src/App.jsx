@@ -69,7 +69,7 @@ function App() {
 
   return (
     <Router>
-      <div>
+      <div className='App'>
         <Nav isLoggedIn={isLoggedIn}/>
         <Route path="/" exact component={Home} />
         <Route path="/userpage" exact render={() => <UserPage register={register} login={login} logout={logout} onSubmitHandler={onSubmitHandler} setEmail={setEmail} setPassword={setPassword} isLoggedIn={isLoggedIn}/>}/>

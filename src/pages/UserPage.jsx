@@ -22,7 +22,7 @@ const UserPage = ({isLoggedIn, onSubmitHandler, setEmail, setPassword, register,
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
-                    <input type="submit"/>
+                    {/* <input type="submit"/> */}
                 </form>
                 <button className='navLinks1' onClick={register}>Register</button>
                 <button className='navLinks1' onClick={login}>Login</button>
