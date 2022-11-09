@@ -1,5 +1,5 @@
 import React from 'react';
-import UndrawBooks from '../assets/Undraw_Books.svg'
+import UndrawDog from '../assets/undraw_good_dog.svg'
 
 const Landing = () => {
     return (
@@ -7,14 +7,14 @@ const Landing = () => {
             <header>
                 <div className="header__container">
                     <div className="header__description">
-                        <h1>The world's best online library platform</h1>
-                        <h2>Find your dream book with <span className='purple'>Library</span></h2>
+                        <h1>Learn how to train your dog online!</h1>
+                        <h2>Help your dog reach their full <span className='purple'>Potential</span></h2>
                         <a href="#features">
-                            <button className='btn'>Browse Books</button>
+                            <button className='btn'>How Do I Start?</button>
                         </a>
                     </div>
                     <figure className="header__img--wrapper">
-                        <img src={UndrawBooks} alt="" />
+                        <img src={UndrawDog} alt="" />
                     </figure>
                 </div>
             </header>

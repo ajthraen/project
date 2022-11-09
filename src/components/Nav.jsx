@@ -1,40 +1,68 @@
 import React from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import LibraryLogo from '../assets/Library.svg';
 import { Link } from 'react-router-dom';
-import Logo from '../assets/Library.svg'
 
-const Nav = (props) => {
-    const isLoggedIn = props.isLoggedIn
+const Nav = () => {
+  function openMenu() {
+    document.body.classList += " menu--open";
+  }
+
+  function closeMenu() {
+    document.body.classList.remove("menu--open");
+  }
   
-    return (
-        <div className='container2'>
-            <div className="leftBox">
-                <a href="/">
-                    <img src={Logo} alt="" className="logo" />
-                </a>
-            </div>
-            <div className="rightBox">
-                    {isLoggedIn ?
-                        <Link to="/userpage" className="navLinks">
-                           Sign Out
-                        </Link>
-                        :
-                        <ul className='navLinkBox'>
-                            <li>
-                                <Link to="/userpage" className="navLinks">
-                                Sign In
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/userpage" className="navLinks">
-                                Register
-                                </Link>
-                            </li>
-                        </ul>
-                    }
-                {/* <button className='userBubble'>{user.email[0].toUpperCase()}</button> */}
-            </div>
+  return (
+    <nav>
+      <div className="nav__container">
+        <Link to="/">
+          <img src={LibraryLogo} alt="" className="logo" />
+        </Link>
+        <ul className="nav__links">
+          <li className="nav__list">
+            <Link to="/" className="nav__link">
+              Home
+            </Link>
+          </li>
+          <li className="nav__list">
+            <Link to="/userpage" className="nav__link">
+              Login
+            </Link>
+          </li>
+          <button className="btn__menu" onClick={openMenu}>
+            <FontAwesomeIcon icon="bars" />
+          </button>
+          <li className='nav__icon'>
+            <Link to="/cart" className='nav__link'>
+              <FontAwesomeIcon icon="shopping-cart" />
+            </Link>
+          </li>
+        </ul>
+        <div className="menu__backdrop">
+          <button className="btn__menu btn__menu--close" onClick={closeMenu}>
+            <FontAwesomeIcon icon="times" />
+          </button>
+          <ul className="menu__links">
+            <li className="menu__list">
+              <Link to="/" className='menu__link'>
+                Home
+              </Link>
+            </li>
+            <li className="menu__list">
+              <Link to="/books" className='menu__link'>
+                Books
+              </Link>
+            </li>
+            <li className="menu__list">
+              <Link to="/cart" className='menu__link'>
+                Cart
+              </Link>
+            </li>
+          </ul>
         </div>
-    );
-}
+      </div>
+    </nav>
+  );
+};
 
 export default Nav;
