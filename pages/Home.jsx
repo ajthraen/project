@@ -1,11 +1,20 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+// import {Link} from 'react-router-dom'
+import Landing from '../components/Landing';
+import Highlights from '../components/Highlights';
+import Featured from '../components/Featured';
+import Discounted from '../components/Discounted';
+import Explore from '../components/Explore';
 
 const Home = () => {
     return (
-        <div>
-            <div className='somePad'><Link to="/userpage" className="navLinks">Login</Link></div>
-        </div>
+        <>
+            <Landing />
+            <Highlights />
+            <Featured />
+            <Discounted />
+            <Explore />
+        </>
     );
 }
 
