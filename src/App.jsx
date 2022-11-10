@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Nav from './components/Nav';
 import Page from './pages/Page';
 import Form from './pages/Form';
+import Footer from './components/Footer'
 import { useState } from 'react';
 import { auth } from "./firebase/init"
 import { 
@@ -75,6 +76,7 @@ function App() {
         <Route path="/userpage" exact render={() => <UserPage register={register} login={login} logout={logout} onSubmitHandler={onSubmitHandler} setEmail={setEmail} setPassword={setPassword} isLoggedIn={isLoggedIn}/>}/>
         <Route path="/page" exact render={() => <Page/>}/>
         <Route path="/form" exact render={() => <Form/>}/>
+        <Footer />
       </div>
     </Router>  
   );

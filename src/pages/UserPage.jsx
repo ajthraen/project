@@ -27,8 +27,8 @@ const UserPage = ({isLoggedIn, onSubmitHandler, setEmail, setPassword, register,
                 <button className='navLinks1' onClick={register}>Register</button>
                 <button className='navLinks1' onClick={login}>Login</button>
                 <button className='navLinks1' onClick={logout}>Logout</button>
-                <div>The user is <b>{isLoggedIn ? 'Currently' : 'Not'}</b> logged in.</div>
-                <div className='somePad'><Link to="/" className="navLinks">Home</Link></div>
+                <div className='loginStatus'>You are <b>{isLoggedIn ? 'Currently' : 'Not'}</b> logged in.</div>
+                {/* <div className='somePad'><Link to="/" className="navLinks">Home</Link></div> */}
             </div>
         </div>
     );
