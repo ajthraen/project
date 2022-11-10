@@ -8,23 +8,23 @@ const Highlights = () => {
             <div className="container">
                 <div className="row">
                     <h2 className="section__title">
-                        Why choose <span className='purple'>Library</span>
+                        Why choose <span className='purple'>Top Dog Academy</span>
                     </h2>
                     <div className="highlight__wrapper">
                         <Highlight 
                             icon={<FontAwesomeIcon icon="bolt" />} 
-                            title="Easy and Quick"
-                            para="Get access to the book you purchased online instantly."
+                            title="Fast Sign Up"
+                            para="Get access to Top Dog Academy's full curriculum with a few clicks."
                         />
                         <Highlight 
-                            icon={<FontAwesomeIcon icon="book-open" />} 
-                            title="10,000+ Books"
-                            para="Get access to the book you purchased online instantly."
+                            icon={<FontAwesomeIcon icon="fa-building-columns" />} 
+                            title="4 Steps to Mastery"
+                            para="Learn the 4 Pillars of Training to correct your dog's worst behaivors."
                         />
                         <Highlight 
                             icon={<FontAwesomeIcon icon="tags" />} 
                             title="Affordable"
-                            para="Get access to the book you purchased online instantly."
+                            para="Find out how pro's train for a tenth the price of board and train programs."
                         />
                     </div>
                 </div>
