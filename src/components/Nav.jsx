@@ -3,7 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LibraryLogo from '../assets/Library.svg';
 import { Link } from 'react-router-dom';
 
-const Nav = () => {
+const Nav = (props) => {
+  const isLoggedIn = props.isLoggedIn
+
   function openMenu() {
     document.body.classList += " menu--open";
   }
@@ -18,26 +20,49 @@ const Nav = () => {
         <Link to="/">
           <img src={LibraryLogo} alt="" className="logo" />
         </Link>
-        <ul className="nav__links">
-          <li className="nav__list">
-            <Link to="/" className="nav__link">
-              Home
-            </Link>
-          </li>
-          <li className="nav__list">
-            <Link to="/userpage" className="nav__link">
-              Login
-            </Link>
-          </li>
-          <button className="btn__menu" onClick={openMenu}>
-            <FontAwesomeIcon icon="bars" />
-          </button>
-          <li className='nav__icon'>
-            <Link to="/cart" className='nav__link'>
-              <FontAwesomeIcon icon="shopping-cart" />
-            </Link>
-          </li>
-        </ul>
+          {isLoggedIn ?
+            <ul className="nav__links">
+              <li className="nav__list">
+                <Link to="/page" className="nav__link">
+                  Training Center
+                </Link>
+              </li>
+              <li className="nav__list">
+                <Link to="/userpage" className="nav__link">
+                  Log Out
+                </Link>
+              </li>
+              <button className="btn__menu" onClick={openMenu}>
+                <FontAwesomeIcon icon="bars" />
+              </button>
+              <li className='nav__icon'>
+                <Link to="/cart" className='nav__link'>
+                  <FontAwesomeIcon icon="shopping-cart" />
+                </Link>
+              </li>
+            </ul>
+            :
+            <ul>
+              <li className="nav__list">
+                <Link to="/" className="nav__link">
+                  Home
+                </Link>
+              </li>
+              <li className="nav__list">
+                <Link to="/userpage" className="nav__link">
+                  Login
+                </Link>
+              </li>
+              <button className="btn__menu" onClick={openMenu}>
+                <FontAwesomeIcon icon="bars" />
+              </button>
+              <li className='nav__icon'>
+                <Link to="/cart" className='nav__link'>
+                  <FontAwesomeIcon icon="shopping-cart" />
+                </Link>
+              </li>
+            </ul>
+          }
         <div className="menu__backdrop">
           <button className="btn__menu btn__menu--close" onClick={closeMenu}>
             <FontAwesomeIcon icon="times" />
@@ -49,13 +74,13 @@ const Nav = () => {
               </Link>
             </li>
             <li className="menu__list">
-              <Link to="/books" className='menu__link'>
-                Books
+              <Link to="/userpage" className='menu__link'>
+                Login
               </Link>
             </li>
             <li className="menu__list">
-              <Link to="/cart" className='menu__link'>
-                Cart
+              <Link to="/page" className='menu__link'>
+                Training Center
               </Link>
             </li>
           </ul>

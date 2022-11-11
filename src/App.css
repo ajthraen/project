@@ -965,3 +965,22 @@ form {
 .somePad {
   margin-top: 24px;
 }
+
+.mainContainer {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  background-color: #bbbbbb;
+  height: 100%;
+  overflow: auto;
+  padding: 12px;
+}
+
+.pageContainer {
+  color: black;
+  padding: 12px;
+}
