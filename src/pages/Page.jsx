@@ -6,7 +6,7 @@ const Page = () => {
         <div className="mainContainer">
             <Sibebar />
             <div className='pageContainer'>
-                This is a page
+                This is a big page
             </div>
         </div>
     );
