@@ -28,7 +28,7 @@ const Nav = (props) => {
                 </Link>
               </li>
               <li className="nav__list">
-                <Link to="/" className="nav__link">
+                <Link to="/userpage" className="nav__link">
                   Log Out
                 </Link>
               </li>
