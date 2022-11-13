@@ -5,7 +5,7 @@ const Explore = () => {
     return (
         <section id="explore">
             <div className="container p-4">
-                <div className='d-flex flex-direction-column align-item-center'>
+                <div className='d-flex flex-column align-items-center'>
                     <div>
                         <h2>Start your Training <span className="purple">Journey</span></h2>
                     </div>

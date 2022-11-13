@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <footer>
             <div className="container">
-                <div className="row row__column">
+                <div className="d-flex flex-column align-items-center">
                     <Link to="/">
                         <figure className='footer__logo'>
                             <img src={Logo} className='footer__logo--img' alt="" />
