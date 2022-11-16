@@ -42,7 +42,7 @@ const Nav = (props) => {
               </li>
             </ul>
             :
-            <ul>
+            <ul className="nav__links">
               <li className="nav__list">
                 <Link to="/" className="nav__link">
                   Home

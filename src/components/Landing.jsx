@@ -10,7 +10,7 @@ const Landing = () => {
                         <h1>Learn how to train your dog online!</h1>
                         <h2>Help your dog reach their full <span className='purple'>Potential</span></h2>
                         <a href="#features">
-                            <button className='btn'>How Do I Start?</button>
+                            <button className='btn2'>How Do I Start?</button>
                         </a>
                     </div>
                     <figure className="header__img--wrapper">

@@ -1,13 +1,14 @@
 import React from 'react';
-import Sibebar from '../components/Sibebar';
+import Sidetest from '../components/Sidetest';
 
 const Page = () => {
     return (
         <div className="mainContainer">
-            <Sibebar />
+            <Sidetest />
+            {/* <Sibebar />
             <div className='pageContainer'>
                 This is a big page
-            </div>
+            </div> */}
         </div>
     );
 }
