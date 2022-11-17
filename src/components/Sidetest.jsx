@@ -1,70 +1,97 @@
-import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
-import Collapse from 'react-bootstrap/Collapse';
+// import React, {useState} from 'react';
+// import { Link } from 'react-router-dom';
+// import {Accordion} from 'react-bootstrap'
+import SidebarMenu from 'react-bootstrap-sidebar-menu';
 
 const Sidetest = () => {
-    const [open, setOpen] = useState(false);
-    const [open1, setOpen1] = useState(false);
-    const [open2, setOpen2] = useState(false);
 
     return (
-        <div className='sidebar'>
-            <Link to="/page" className="sidebar__title">Training Center</Link>
-            <div className='p-3'>
-                <Button
-                    onClick={() => setOpen(!open)}
-                    aria-controls="example-collapse-text"
-                    aria-expanded={open}
-                >
-                    \/
-                </Button>
-                Course 1
-                <Collapse in={open}>
-                    <div id="example-collapse-text">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-                    terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
-                    labore wes anderson cred nesciunt sapiente ea proident.
-                    </div>
-                </Collapse>
-            </div>
-            <div className='p-3'>
-                <Button
-                    onClick={() => setOpen1(!open1)}
-                    aria-controls="example-collapse-text"
-                    aria-expanded={open1}
-                >
-                    \/
-                </Button>
-                Course 2
-                <Collapse in={open1}>
-                    <div id="example-collapse-text">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-                    terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
-                    labore wes anderson cred nesciunt sapiente ea proident.
-                    </div>
-                </Collapse>
-            </div>
-            <div className='p-3'>
-                <Button
-                    onClick={() => setOpen2(!open2)}
-                    aria-controls="example-collapse-text"
-                    aria-expanded={open2}
-                >
-                    \/
-                </Button>
-                Course 3
-                <Collapse in={open2}>
-                    <div id="example-collapse-text">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-                    terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
-                    labore wes anderson cred nesciunt sapiente ea proident.
-                    </div>
-                </Collapse>
-            </div>
-            
+        <div>
+            <SidebarMenu className='p-1' style={{width: '240px'}}>
+            <SidebarMenu.Toggle className='btn btn-outline-secondary'>-</SidebarMenu.Toggle>
+                {/* <SidebarMenu.Header className='p-2'>
+                    <SidebarMenu.Toggle className='btn btn-outline-secondary'>-</SidebarMenu.Toggle>
+                </SidebarMenu.Header> */}
+                <SidebarMenu.Collapse>
+                    <SidebarMenu.Body>
+                        <SidebarMenu.Sub>
+                            <SidebarMenu.Sub.Toggle>
+                                <SidebarMenu.Nav.Icon />
+                                <SidebarMenu.Nav.Title>Submenu title</SidebarMenu.Nav.Title>
+                            </SidebarMenu.Sub.Toggle>
+                            <SidebarMenu.Sub.Collapse>
+                                <SidebarMenu.Nav>
+                                    <SidebarMenu.Nav.Link>
+                                        <SidebarMenu.Nav.Icon>*</SidebarMenu.Nav.Icon>
+                                        <SidebarMenu.Nav.Title>Submenu item title</SidebarMenu.Nav.Title>
+                                    </SidebarMenu.Nav.Link>
+                                </SidebarMenu.Nav>
+                            </SidebarMenu.Sub.Collapse>
+                        </SidebarMenu.Sub>
+                        <SidebarMenu.Sub>
+                            <SidebarMenu.Sub.Toggle>
+                                <SidebarMenu.Nav.Icon />
+                                <SidebarMenu.Nav.Title>Submenu title 2</SidebarMenu.Nav.Title>
+                            </SidebarMenu.Sub.Toggle>
+                            <SidebarMenu.Sub.Collapse>
+                                <SidebarMenu.Nav>
+                                    <SidebarMenu.Nav.Link>
+                                        <SidebarMenu.Nav.Icon>*</SidebarMenu.Nav.Icon>
+                                        <SidebarMenu.Nav.Title>Submenu item title</SidebarMenu.Nav.Title>
+                                    </SidebarMenu.Nav.Link>
+                                </SidebarMenu.Nav>
+                            </SidebarMenu.Sub.Collapse>
+                        </SidebarMenu.Sub>
+                        <SidebarMenu.Sub>
+                            <SidebarMenu.Sub.Toggle>
+                                <SidebarMenu.Nav.Icon />
+                                <SidebarMenu.Nav.Title>Submenu title 3</SidebarMenu.Nav.Title>
+                            </SidebarMenu.Sub.Toggle>
+                            <SidebarMenu.Sub.Collapse>
+                                <SidebarMenu.Nav>
+                                    <SidebarMenu.Nav.Link>
+                                        <SidebarMenu.Nav.Icon>*</SidebarMenu.Nav.Icon>
+                                        <SidebarMenu.Nav.Title>Submenu item title</SidebarMenu.Nav.Title>
+                                    </SidebarMenu.Nav.Link>
+                                </SidebarMenu.Nav>
+                            </SidebarMenu.Sub.Collapse>
+                        </SidebarMenu.Sub>
+                    </SidebarMenu.Body>
+                </SidebarMenu.Collapse>
+            </SidebarMenu>
         </div>
     );
 }
 
 export default Sidetest;
+
+{/* <SidebarMenu>
+    <SidebarMenu.Collapse>
+        <SidebarMenu.Header>
+            <SidebarMenu.Brand>My Brand</SidebarMenu.Brand>
+            <SidebarMenu.Toggle />
+        </SidebarMenu.Header>
+        <SidebarMenu.Body>
+            <SidebarMenu.Nav>
+                <SidebarMenu.Nav.Link>
+                    <SidebarMenu.Nav.Icon>*</SidebarMenu.Nav.Icon>
+                    <SidebarMenu.Nav.Title>Menu item title</SidebarMenu.Nav.Title>
+                </SidebarMenu.Nav.Link>
+            </SidebarMenu.Nav>
+            <SidebarMenu.Sub>
+                <SidebarMenu.Sub.Toggle>
+                    <SidebarMenu.Nav.Icon />
+                    <SidebarMenu.Nav.Title>Submenu title</SidebarMenu.Nav.Title>
+                </SidebarMenu.Sub.Toggle>
+                <SidebarMenu.Sub.Collapse>
+                    <SidebarMenu.Nav>
+                        <SidebarMenu.Nav.Link>
+                            <SidebarMenu.Nav.Icon>*</SidebarMenu.Nav.Icon>
+                            <SidebarMenu.Nav.Title>Submenu item title</SidebarMenu.Nav.Title>
+                        </SidebarMenu.Nav.Link>
+                    </SidebarMenu.Nav>
+                </SidebarMenu.Sub.Collapse>
+            </SidebarMenu.Sub>
+        </SidebarMenu.Body>
+    </SidebarMenu.Collapse>
+</SidebarMenu> */}
