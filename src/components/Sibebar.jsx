@@ -3,13 +3,20 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Collapse from 'react-bootstrap/Collapse';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Sibebar() {
     const [open, setOpen] = useState(false);
 
     return (
         <>
-            <Button className="m-1" style={{height: '42px'}} onClick={() => setOpen(!open)} aria-controls="1"aria-expanded={open}>~</Button>
+            <Button className="m-1" style={{height: '42px'}} onClick={() => setOpen(!open)} aria-controls="1"aria-expanded={open}>
+                { open ? 
+                    <FontAwesomeIcon icon="arrow-left" />
+                    :
+                    <FontAwesomeIcon icon="arrow-right" />
+                }
+            </Button>
             <div style={{ minHeight: '150px' }}>
                 <Collapse in={open} dimension="width">
                     <div id="1">
