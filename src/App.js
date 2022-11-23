@@ -71,7 +71,7 @@ function App() {
   return (
     <Router>
       <div className='App'>
-        <Nav isLoggedIn={isLoggedIn}/>
+        <Nav isLoggedIn={isLoggedIn} email={email}/>
         <Route path="/" exact component={Home} />
         <Route path="/userpage" exact render={() => <UserPage register={register} login={login} logout={logout} onSubmitHandler={onSubmitHandler} setEmail={setEmail} setPassword={setPassword} isLoggedIn={isLoggedIn}/>}/>
         <Route path="/page" exact render={() => <Page/>}/>

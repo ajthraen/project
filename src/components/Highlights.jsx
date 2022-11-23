@@ -5,9 +5,9 @@ import Highlight from './ui/Highlight';
 const Highlights = () => {
     return (
         <section id="highlights">
-            <div className="container">
+            <div className="container5">
                 <div className="row">
-                    <h2 className="section__title">
+                    <h2 className="pb-3 section__title">
                         Why choose <span className='purple'>Top Dog Academy</span>
                     </h2>
                     <div className="highlight__wrapper">

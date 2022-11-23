@@ -10,6 +10,7 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: rgb(248, 248, 248);
 }
 
 html {
@@ -77,6 +78,11 @@ button:active {
   transform: translateY(1px);
 }
 
+.BSbutton {
+  background-color: #7342d6 !important;
+  border: none !important;
+}
+
 .btn2 {
   background-color: #7342d6;
   color: white;
@@ -94,6 +100,21 @@ button:active {
   font-size: 20px;
   border-radius: 4px;
   border: none;
+}
+
+.btn3 {
+  background-color: #7342d6;
+  color: white;
+  padding: 6px 12px;
+  font-size: 20px;
+  border-radius: 6px;
+  border: none;
+  text-decoration: none;
+}
+
+.btn3:hover{
+  color: rgb(229, 229, 229);
+  text-decoration: none;
 }
 
 .purple {
@@ -122,12 +143,16 @@ button:active {
   color: #7342d6;
 }
 
+.nav__link:hover{
+  text-decoration: none;
+}
+
 .nav__links {
   margin-bottom: 0;
 }
 
 .nav__list {
-  margin-left: 16px;
+  margin-left: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -247,7 +272,7 @@ header {
   margin-top: 40px;
 }
 
-.header__container {
+.header__container1 {
   width: 100%;
   max-width: 720px;
   margin: 0 auto;
@@ -257,7 +282,7 @@ header {
   justify-content: space-around;
 }
 
-.header__description {
+.header__description1 {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -277,6 +302,11 @@ header {
 
 .container {
   padding: 56px 0;
+}
+
+.container5 {
+  padding: 56px 0;
+  background-color: white;
 }
 
 .books__container {
@@ -886,8 +916,22 @@ select {
 .container1{
   background-color: rgb(248, 248, 248);
   width: auto;
+  margin: auto;
   height: 720px;
   padding: 24px;
+}
+
+.container3{
+  display: flex;
+  background-color: rgb(248, 248, 248);
+  width: 75%;
+  margin: auto;
+  height: 720px;
+  padding: 24px;
+}
+
+.container4{
+  padding: 60px 60px 0 32px;
 }
 
 form {
@@ -953,10 +997,12 @@ form {
 .userBubble {
   margin: 0 16px;
   border: none;
-  background-color: rgb(255, 243, 254);
+  background-color: #7342d6;
+  color: white;
   height: 34px;
   width: auto;
-  font-size: 24px;
+  font-size: 23px;
+  font-weight: lighter;
   padding: 0 8px;
   border-radius: 16px;
 }

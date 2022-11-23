@@ -5,10 +5,10 @@ const Landing = () => {
     return (
         <section id='landing'>
             <header>
-                <div className="header__container">
-                    <div className="header__description">
+                <div className="header__container1">
+                    <div className="header__description1">
                         <h1>Learn how to train your dog online!</h1>
-                        <h2>Help your dog reach their full <span className='purple'>Potential</span></h2>
+                        <h2 className='pb-3'>Help your dog reach their full <span className='purple'>Potential</span></h2>
                         <a href="#features">
                             <button className='btn2'>How Do I Start?</button>
                         </a>
@@ -18,7 +18,6 @@ const Landing = () => {
                     </figure>
                 </div>
             </header>
-
         </section>
     );
 }

@@ -10,13 +10,13 @@ function Sibebar() {
 
     return (
         <>
-            <Button className="m-1" style={{height: '42px'}} onClick={() => setOpen(!open)} aria-controls="1"aria-expanded={open}>
+            <button className="btn" style={{height: '40px'}} onClick={() => setOpen(!open)} aria-controls="1"aria-expanded={open}>
                 { open ? 
-                    <FontAwesomeIcon icon="arrow-left" />
+                    <FontAwesomeIcon style={{height: '20px'}} icon="arrow-left" />
                     :
-                    <FontAwesomeIcon icon="arrow-right" />
+                    <FontAwesomeIcon style={{height: '20px'}} icon="arrow-right" />
                 }
-            </Button>
+            </button>
             <div style={{ minHeight: '150px' }}>
                 <Collapse in={open} dimension="width">
                     <div id="1">

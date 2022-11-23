@@ -4,7 +4,9 @@ import LibraryLogo from '../assets/Library.svg';
 import { Link } from 'react-router-dom';
 
 const Nav = (props) => {
-  const isLoggedIn = props.isLoggedIn
+  const isLoggedIn = props.isLoggedIn;
+  const email = props.email;
+  console.log(email)
 
   function openMenu() {
     document.body.classList += " menu--open";
@@ -36,8 +38,9 @@ const Nav = (props) => {
                 <FontAwesomeIcon icon="bars" />
               </button>
               <li className='nav__icon'>
-                <Link to="/cart" className='nav__link'>
-                  <FontAwesomeIcon icon="shopping-cart" />
+                <Link to="/userpage" className='nav__link'>
+                  <div className='userBubble'>{email[0].toUpperCase()}</div>
+                  {/* <FontAwesomeIcon icon="shopping-cart" /> */}
                 </Link>
               </li>
             </ul>
@@ -53,14 +56,14 @@ const Nav = (props) => {
                   Login
                 </Link>
               </li>
+              <li className="nav__list">
+                <Link to="/userpage" className="btn3">
+                  Register
+                </Link>
+              </li>
               <button className="btn__menu" onClick={openMenu}>
                 <FontAwesomeIcon icon="bars" />
               </button>
-              <li className='nav__icon'>
-                <Link to="/cart" className='nav__link'>
-                  <FontAwesomeIcon icon="shopping-cart" />
-                </Link>
-              </li>
             </ul>
           }
         <div className="menu__backdrop">
