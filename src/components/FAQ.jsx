@@ -4,7 +4,7 @@ import Accordion from 'react-bootstrap/Accordion';
 // import Book from './ui/Book';
 
 
-const Discounted = () => {
+const FAQ = () => {
     return (
       <section id="discount">
         <div className="container pt-3 pb-5">
@@ -13,7 +13,7 @@ const Discounted = () => {
               <h2 className='pb-3'>Frequently Asked Questions</h2>
             </div>
             <div>
-              <Accordion defaultActiveKey="0">
+              <Accordion>
                 <Accordion.Item eventKey="0">
                   <Accordion.Header>How long does it take to complete the program?</Accordion.Header>
                   <Accordion.Body>
@@ -53,4 +53,4 @@ const Discounted = () => {
     );
 }
 
-export default Discounted;
+export default FAQ;

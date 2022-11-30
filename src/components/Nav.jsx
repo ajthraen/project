@@ -2,11 +2,11 @@ import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LibraryLogo from '../assets/Library.svg';
 import { Link } from 'react-router-dom';
+import Regmodal from './ui/Regmodal';
 
 const Nav = (props) => {
   const isLoggedIn = props.isLoggedIn;
   const email = props.email;
-  console.log(email)
 
   function openMenu() {
     document.body.classList += " menu--open";
@@ -25,7 +25,7 @@ const Nav = (props) => {
           {isLoggedIn ?
             <ul className="nav__links">
               <li className="nav__list">
-                <Link to="/page" className="nav__link">
+                <Link to="/usercontent" className="nav__link">
                   Training Center
                 </Link>
               </li>
@@ -82,7 +82,7 @@ const Nav = (props) => {
               </Link>
             </li>
             <li className="menu__list">
-              <Link to="/page" className='menu__link'>
+              <Link to="/usercontent" className='menu__link'>
                 Training Center
               </Link>
             </li>

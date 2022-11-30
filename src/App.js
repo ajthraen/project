@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Nav from './components/Nav';
-import Page from './pages/Page';
+import UserContent from './pages/UserContent';
 import Form from './pages/Form';
 import Footer from './components/Footer'
 import { useState } from 'react';
@@ -23,6 +23,7 @@ function App() {
   const [password, setPassword] = useState("")
   const [isLoggedIn, setIsLoggedIn] = useState("")
   const users = {email, password}
+  const [regStatus, setRegStatus] = useState(false);
 
   const onSubmitHandler = (event) => {
       event.preventDefault();
@@ -42,6 +43,7 @@ function App() {
   function register() {
     createUserWithEmailAndPassword(auth, email, password)
     .then((user) => {
+      setRegStatus(true);
       console.log(user)
     })
     .catch((error) => {
@@ -73,8 +75,8 @@ function App() {
       <div className='App'>
         <Nav isLoggedIn={isLoggedIn} email={email}/>
         <Route path="/" exact component={Home} />
-        <Route path="/userpage" exact render={() => <UserPage register={register} login={login} logout={logout} onSubmitHandler={onSubmitHandler} setEmail={setEmail} setPassword={setPassword} isLoggedIn={isLoggedIn}/>}/>
-        <Route path="/page" exact render={() => <Page/>}/>
+        <Route path="/userpage" exact render={() => <UserPage regStatus={regStatus} register={register} login={login} logout={logout} onSubmitHandler={onSubmitHandler} setEmail={setEmail} setPassword={setPassword} isLoggedIn={isLoggedIn}/>}/>
+        <Route path="/usercontent" exact render={() => <UserContent/>}/>
         <Route path="/form" exact render={() => <Form/>}/>
         <Footer />
       </div>
