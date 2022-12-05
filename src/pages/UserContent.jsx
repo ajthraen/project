@@ -6,7 +6,7 @@ const userContent = () => {
     return (
         <div className="mainContainer">
             <Sibebar/>
-            <div className='pageContainer'>
+            <div style={{width: '2080px'}}>
                 <Page2/>
             </div>
         </div>

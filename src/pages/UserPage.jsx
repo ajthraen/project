@@ -26,8 +26,11 @@ const UserPage = ({isLoggedIn, onSubmitHandler, setEmail, setPassword, register,
                                 />
                             </div>
                         </form>
-                        <button className='btn3 m-2' onClick={login}>Login</button>
-                        <button className='btn3 m-2' onClick={logout}>Logout</button>
+                        {isLoggedIn ?
+                            <button className='btn3 m-2' onClick={logout}>Logout</button>
+                            : 
+                            <button className='btn3 m-2' onClick={login}>Login</button>
+                        }
                         <div className='loginStatus'>You are <b>{isLoggedIn ? 'Currently' : 'Not'}</b> logged in.</div>
                         {/* Firebase Registration Button
                         <div className='mt-5'>
